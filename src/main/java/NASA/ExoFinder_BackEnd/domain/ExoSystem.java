@@ -26,6 +26,8 @@ public class ExoSystem {
 
     private String planetEccentricity; // pl_orbeccen
 
+    private String planetOrbitSemiMajorAxis; // pl_orbsmax
+
     private String stellarSpectralType; // st_spectype
 
     private String stellarMass; // st_mass
