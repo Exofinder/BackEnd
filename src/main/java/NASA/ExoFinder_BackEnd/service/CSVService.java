@@ -28,7 +28,14 @@ public class CSVService {
                 ExoSystem exoSystem = new ExoSystem();
                 exoSystem.setPlanetName(line[0]);
                 exoSystem.setHostName(line[1]);
-                exoSystem.setPlanetDensity(line[2]);
+                exoSystem.setPlanetOrbitSemiMajorAxis(line[2]);
+                exoSystem.setPlanetDensity(line[3]);
+                exoSystem.setPlanetEccentricity(line[4]);
+                exoSystem.setStellarSpectralType(line[5]);
+                exoSystem.setStellarEffectiveTemperature(line[6]);
+                exoSystem.setStellarMass(line[7]);
+                exoSystem.setSystemDistance(line[8]);
+                exoSystem.setSystemVMagnitude(line[9]);
 
                 exoSystemRepository.save(exoSystem);
 

@@ -18,7 +18,6 @@ import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -36,6 +35,7 @@ public class ExoSystemRestController {
         List<String> planetNames = new ArrayList<>();
         List<String> planetDensities = new ArrayList<>();
         List<String> planetEccentricities = new ArrayList<>();
+        List<String> planetOrbitSemiMajorAxes = new ArrayList<>();
         List<String> stellarSpectralTypes = new ArrayList<>();
         List<String> stellarMasses = new ArrayList<>();
         List<String> stellarEffectiveTemperatures = new ArrayList<>();
@@ -46,6 +46,7 @@ public class ExoSystemRestController {
            planetNames.add(planetInfo.getPlanetName());
            planetDensities.add(planetInfo.getPlanetDensity());
            planetEccentricities.add(planetInfo.getPlanetEccentricity());
+           planetOrbitSemiMajorAxes.add(planetInfo.getPlanetOrbitSemiMajorAxis());
            stellarSpectralTypes.add(planetInfo.getStellarSpectralType());
            stellarMasses.add(planetInfo.getStellarMass());
            stellarEffectiveTemperatures.add(planetInfo.getStellarEffectiveTemperature());
@@ -59,6 +60,7 @@ public class ExoSystemRestController {
                         .queryParam("plNameList", planetNames)
                         .queryParam("plDensList", planetDensities)
                         .queryParam("plObeccenList", planetEccentricities)
+                        .queryParam("plOrbsmaxList", planetOrbitSemiMajorAxes)
                         .queryParam("stSpectypeList", stellarSpectralTypes)
                         .queryParam("stMassList", stellarMasses)
                         .queryParam("stTeffList", stellarEffectiveTemperatures)
