@@ -26,6 +26,8 @@ spring:
           auto: update # update / create
         default_batch_fetch_size: 1000
 
+fastApi:
+  url: ${ai.server.url}
 ---
 spring:
   config:
@@ -49,3 +51,6 @@ spring:
         hbm2ddl:
           auto: update # update / create
         default_batch_fetch_size: 1000
+
+fastApi:
+  url: ${ai.server.url}
