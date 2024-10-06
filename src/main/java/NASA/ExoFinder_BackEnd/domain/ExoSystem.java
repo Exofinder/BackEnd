@@ -28,11 +28,11 @@ public class ExoSystem {
 
     private String planetOrbitSemiMajorAxis; // pl_orbsmax
 
+    private String planetRadius; // pl_rade
+
     private String stellarSpectralType; // st_spectype
 
-    private String stellarMass; // st_mass
-
-    private String stellarEffectiveTemperature; // st_teff
+    private String stellarRadius; // st_rad
 
     private String systemDistance; // sy_dist
 

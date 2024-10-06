@@ -29,16 +29,16 @@ public class ExoSystemRestController {
     private final WebClient webClient;
 
     @GetMapping("")
-    public Mono<ApiResponse<?>> exoSystemInfo(@RequestParam String hostName) {
+    public Mono<ApiResponse<?>> exoSystemInfo(@RequestParam String hostName, @RequestParam float d) {
         List<ExoSystem> planetInfoList = exoSystemQueryService.getPlanetInfoList(hostName);
 
         List<String> planetNames = new ArrayList<>();
         List<String> planetDensities = new ArrayList<>();
         List<String> planetEccentricities = new ArrayList<>();
         List<String> planetOrbitSemiMajorAxes = new ArrayList<>();
+        List<String> planetRadii = new ArrayList<>();
         List<String> stellarSpectralTypes = new ArrayList<>();
-        List<String> stellarMasses = new ArrayList<>();
-        List<String> stellarEffectiveTemperatures = new ArrayList<>();
+        List<String> stellarRadii = new ArrayList<>();
         List<String> systemDistance = new ArrayList<>();
         List<String> systemVMagnitudes = new ArrayList<>();
 
@@ -47,9 +47,9 @@ public class ExoSystemRestController {
            planetDensities.add(planetInfo.getPlanetDensity());
            planetEccentricities.add(planetInfo.getPlanetEccentricity());
            planetOrbitSemiMajorAxes.add(planetInfo.getPlanetOrbitSemiMajorAxis());
+           planetRadii.add(planetInfo.getPlanetRadius());
            stellarSpectralTypes.add(planetInfo.getStellarSpectralType());
-           stellarMasses.add(planetInfo.getStellarMass());
-           stellarEffectiveTemperatures.add(planetInfo.getStellarEffectiveTemperature());
+           stellarRadii.add(planetInfo.getStellarRadius());
            systemDistance.add(planetInfo.getSystemDistance());
            systemVMagnitudes.add(planetInfo.getSystemVMagnitude());
         });
@@ -61,11 +61,12 @@ public class ExoSystemRestController {
                         .queryParam("plDensList", planetDensities)
                         .queryParam("plOrbeccenList", planetEccentricities)
                         .queryParam("plOrbsmaxList", planetOrbitSemiMajorAxes)
+                        .queryParam("plRadeList", planetRadii)
                         .queryParam("stSpectypeList", stellarSpectralTypes)
-                        .queryParam("stMassList", stellarMasses)
-                        .queryParam("stTeffList", stellarEffectiveTemperatures)
+                        .queryParam("stRadList", stellarRadii)
                         .queryParam("syDistList", systemDistance)
                         .queryParam("syVmagList", systemVMagnitudes)
+                        .queryParam("diameter", d)
                         .build())
                 .retrieve()
                 .bodyToMono(String.class)
