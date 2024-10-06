@@ -59,7 +59,7 @@ public class ExoSystemRestController {
                         .path("/systemInfo")
                         .queryParam("plNameList", planetNames)
                         .queryParam("plDensList", planetDensities)
-                        .queryParam("plObeccenList", planetEccentricities)
+                        .queryParam("plOrbeccenList", planetEccentricities)
                         .queryParam("plOrbsmaxList", planetOrbitSemiMajorAxes)
                         .queryParam("stSpectypeList", stellarSpectralTypes)
                         .queryParam("stMassList", stellarMasses)
