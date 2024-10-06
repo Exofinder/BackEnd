@@ -9,7 +9,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:5173", "https://exofinder.github.io/FrontEnd/")
+                .allowedOrigins("http://localhost:5173", "https://exofinder.github.io")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
                 .allowedHeaders("*")  // 모든 헤더 허용
                 .maxAge(3600)
