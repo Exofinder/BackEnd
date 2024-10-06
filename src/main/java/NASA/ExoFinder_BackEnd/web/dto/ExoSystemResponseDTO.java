@@ -19,5 +19,6 @@ public class ExoSystemResponseDTO {
         private String innerBoundHabitableZone;
         private String outerBoundHabitableZone;
         private String habitablePercent;
+        private String coronaGraphAffect;
     }
 }
