@@ -1,6 +1,5 @@
 package NASA.ExoFinder_BackEnd.apiPayload;
 
-import NASA.ExoFinder_BackEnd.apiPayload.code.BaseCode;
 import NASA.ExoFinder_BackEnd.apiPayload.code.status.SuccessStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
